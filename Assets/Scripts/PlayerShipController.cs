@@ -14,7 +14,8 @@ public class PlayerShipController : MonoBehaviour {
 
     [SerializeField] private Cannonball CannonballPrefab;
     [SerializeField] private GameObject ProjectilesParent;
-    [SerializeField] private GameObject CannonPos;
+    [SerializeField] private GameObject CannonPosRight;
+    [SerializeField] private GameObject CannonPosLeft;
     [SerializeField] private Rigidbody ShipRigidbody;
     [SerializeField] private bool UseAlternateFiringAngle;
     [SerializeField] private ParticleSystem CollectParticles;
@@ -45,12 +46,14 @@ public class PlayerShipController : MonoBehaviour {
         this.IsStopped = verticalInput == 0;
     }
 
-    void FireToward(Vector3 point) {
+    void FireToward(Vector3 worldPosition, Vector3 screenPosition) {
         Debug.Log($"Firing cannon!");
+        float screenWidth = Screen.width;
+        Transform cannon = screenPosition.x > screenWidth / 2 ? this.CannonPosRight.transform : this.CannonPosLeft.transform;
 
         Cannonball cannonball = Object.Instantiate(this.CannonballPrefab, this.ProjectilesParent.transform, true);
-        cannonball.transform.position = this.CannonPos.transform.position;
-        cannonball.Rigidbody.velocity = this.CannonPos.transform.forward * this.GetCannonVelocity();
+        cannonball.transform.position = cannon.position;
+        cannonball.Rigidbody.velocity = cannon.forward * this.GetCannonVelocity();
     }
 
     void OnDestroy() {

@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour {
 
     public static InputManager Instance { get; private set; }
     
-    public delegate void OnMouseClick(Vector3 position);
+    public delegate void OnMouseClick(Vector3 worldPosition, Vector3 screenPosition);
     public event OnMouseClick MouseClickEvent;
 
     void Awake() {
@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour {
             RaycastHit hit;
             Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit)) {
-                this.MouseClickEvent(hit.point);
+                this.MouseClickEvent(hit.point, Input.mousePosition);
             }
         }
     }
