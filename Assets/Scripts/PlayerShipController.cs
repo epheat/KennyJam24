@@ -12,20 +12,21 @@ public class PlayerShipController : MonoBehaviour {
     [SerializeField] private Cannonball CannonballPrefab;
     [SerializeField] private GameObject ProjectilesParent;
     [SerializeField] private GameObject CannonPos;
+    [SerializeField] private Rigidbody ShipRigidbody;
     [SerializeField] private bool UseAlternateFiringAngle;
 
-    void OnEnable() {
+    void Start() {
         InputManager.Instance.MouseClickEvent += this.FireToward;
     }
 
-    void Update() {
+    void FixedUpdate() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        this.transform.Rotate(0, horizontalInput * this.BaseRotationSpeed * Time.deltaTime, 0);
+        this.ShipRigidbody.MoveRotation(Quaternion.Euler(0, horizontalInput * this.BaseRotationSpeed * Time.deltaTime, 0) * this.ShipRigidbody.rotation);
 
         Vector3 forwardMovement = this.transform.forward * verticalInput * this.BaseMoveSpeed * Time.deltaTime;
-        this.transform.Translate(forwardMovement, Space.World);
+        this.ShipRigidbody.MovePosition(this.ShipRigidbody.position + forwardMovement);
     }
 
     void FireToward(Vector3 point) {
@@ -37,7 +38,7 @@ public class PlayerShipController : MonoBehaviour {
         cannonball.Rigidbody.velocity = launchAngle;
     }
 
-    void OnDisable() {
+    void OnDestroy() {
         InputManager.Instance.MouseClickEvent -= this.FireToward;
     }
 
