@@ -8,6 +8,8 @@ public class EnemyBoatHealth : MonoBehaviour{
     public Slider healthSlider;
     
     private float currentHeath;
+
+    public float GetCurrentHealth() => currentHeath;
     
     public void SetHealth(float maxHealth){
         currentHeath = maxHealth;
@@ -18,10 +20,14 @@ public class EnemyBoatHealth : MonoBehaviour{
     private void TakeDamage(int damage){
         healthSlider.value -= damage;
         currentHeath -= damage;
+
+        if (currentHeath <= 0){
+            Die();
+        }
     }
 
     private void Die(){
-        
+        GetComponent<EnemyBoatMovementController>().enabled = false;
     }
 
     private void OnCollisionEnter(Collision other){

@@ -6,7 +6,6 @@ public class BillboardToCamera : MonoBehaviour
 {
     void Update()
     {
-        // Make the object face the camera
-        transform.LookAt(Camera.main.transform);
+        transform.forward = Camera.main.transform.forward;
     }
 }

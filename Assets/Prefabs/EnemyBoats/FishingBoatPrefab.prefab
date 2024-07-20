@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3599022856714414075}
   - component: {fileID: 5142198320522921347}
   - component: {fileID: 8001336374023908373}
+  - component: {fileID: -7939732407663209739}
   m_Layer: 0
   m_Name: FishingBoatPrefab
   m_TagString: Untagged
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 9065258248874618733}
+--- !u!114 &-7939732407663209739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703085498284050488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f34675366908684491b7c706a6c2083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7997292436349085001
 GameObject:
   m_ObjectHideFlags: 0
