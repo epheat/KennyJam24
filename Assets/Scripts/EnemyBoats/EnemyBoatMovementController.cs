@@ -45,7 +45,7 @@ public class EnemyBoatMovementController : MonoBehaviour{
                 speedModifier = 0;
             }
             else{
-                speedModifier = playerBoat.GetComponent<PlayerShipController>().GetMoveSpeed() * .75f;
+                speedModifier = playerBoat.GetComponent<PlayerShipController>().GetMoveSpeed() * .9f;
             }
             return;
         }

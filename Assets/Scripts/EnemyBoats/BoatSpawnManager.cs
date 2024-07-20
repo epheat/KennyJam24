@@ -13,9 +13,12 @@ public class BoatSpawnManager : MonoBehaviour{
     [SerializeField] private List<EnemyBoat> boats;
     [SerializeField] private List<GameObject> spawnedBoats;
 
+    [SerializeField] private int startingBoats;
     [SerializeField] private int maxBoats;
-
     private void Start(){
+        for (int i = 0; i < startingBoats; i++){
+            SpawnBoat();
+        }
         StartCoroutine(BoatSpawnTimer());
     }
 
@@ -24,6 +27,7 @@ public class BoatSpawnManager : MonoBehaviour{
         EnemyBoat boatSO = GetRandomBoat();
         GameObject boatToSpawn = Instantiate(boatSO.prefab, spawnLocation, TransformUtil.GetLockedYRandomRotation());
         boatToSpawn.GetComponent<EnemyBoatMovementController>().SetMovementSettings(boatSO.speed, boatSO.turnSpeed);
+        boatToSpawn.GetComponent<EnemyBoatHealth>().SetHealth(boatSO.health);
     }
     
     public void DestroyAllBoats(){

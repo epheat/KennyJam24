@@ -1792,7 +1792,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49733690328817640ac19e2fc5023244, type: 2}
   - {fileID: 11400000, guid: 6dc098d751493424db454d2bb84dc444, type: 2}
   spawnedBoats: []
-  maxBoats: 20
+  startingBoats: 15
+  maxBoats: 50
 --- !u!1001 &682263861725142460
 PrefabInstance:
   m_ObjectHideFlags: 0
