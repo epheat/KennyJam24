@@ -29,6 +29,10 @@ public class PlayerShipController : MonoBehaviour {
         return this.BaseMoveSpeed + this.PowerUps.GetValueOrDefault(PowerUpType.BoatSpeed, 0);
     }
 
+    private float GetCannonVelocity() {
+        return this.BaseCannonVelocity;
+    }
+
     void FixedUpdate() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -42,12 +46,11 @@ public class PlayerShipController : MonoBehaviour {
     }
 
     void FireToward(Vector3 point) {
-        Debug.Log($"Firing toward {point}");
+        Debug.Log($"Firing cannon!");
 
-        this.CalculateLaunchAngle(this.CannonPos.transform.position, point, this.BaseCannonVelocity, out Vector3 launchAngle);
         Cannonball cannonball = Object.Instantiate(this.CannonballPrefab, this.ProjectilesParent.transform, true);
         cannonball.transform.position = this.CannonPos.transform.position;
-        cannonball.Rigidbody.velocity = launchAngle;
+        cannonball.Rigidbody.velocity = this.CannonPos.transform.forward * this.GetCannonVelocity();
     }
 
     void OnDestroy() {
@@ -60,6 +63,7 @@ public class PlayerShipController : MonoBehaviour {
     }
 
 
+    // Now unused
     private bool CalculateLaunchAngle(Vector3 startPos, Vector3 targetPos, float projectileVelocity, out Vector3 launch) {
         float g = Physics.gravity.y;
         Vector3 direction = targetPos - startPos;
