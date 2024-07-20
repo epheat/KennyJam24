@@ -19,11 +19,13 @@ public class PlayerShipController : MonoBehaviour {
     [SerializeField] private bool UseAlternateFiringAngle;
     [SerializeField] private ParticleSystem CollectParticles;
 
+    public bool IsStopped;
+
     void Start() {
         InputManager.Instance.MouseClickEvent += this.FireToward;
     }
 
-    private float GetMoveSpeed() {
+    public float GetMoveSpeed() {
         return this.BaseMoveSpeed + this.PowerUps.GetValueOrDefault(PowerUpType.BoatSpeed, 0);
     }
 
@@ -35,6 +37,8 @@ public class PlayerShipController : MonoBehaviour {
 
         Vector3 forwardMovement = this.transform.forward * verticalInput * this.GetMoveSpeed() * Time.deltaTime;
         this.ShipRigidbody.MovePosition(this.ShipRigidbody.position + forwardMovement);
+        
+        this.IsStopped = verticalInput == 0;
     }
 
     void FireToward(Vector3 point) {

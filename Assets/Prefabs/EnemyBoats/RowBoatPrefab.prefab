@@ -262,6 +262,8 @@ MonoBehaviour:
   movementLogic: {fileID: -3374353744182702904}
   minMovementDecisionSeconds: 1
   maxMovementDecisionSeconds: 5
+  playerBoatFollowOffset: 2
+  isFollowing: 0
 --- !u!114 &-3374353744182702904
 MonoBehaviour:
   m_ObjectHideFlags: 0
