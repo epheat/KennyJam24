@@ -20,6 +20,9 @@ public class PlayerShipController : MonoBehaviour {
     [SerializeField] private bool UseAlternateFiringAngle;
     [SerializeField] private ParticleSystem CollectParticles;
 
+    [SerializeField] private BoatConnection BoatConnectionPrefab;
+    [SerializeField] private Transform ConnectionsParent;
+
     public bool IsStopped;
 
     void Start() {
@@ -68,6 +71,12 @@ public class PlayerShipController : MonoBehaviour {
     public void ApplyPowerup(PowerUp powerUp) {
         this.CollectParticles.Play();
         this.PowerUps[powerUp.type] = this.PowerUps.GetValueOrDefault(powerUp.type, 0) + powerUp.amount;
+    }
+
+    public BoatConnection CreateConnection(GameObject connectedShip) {
+        BoatConnection connect = Object.Instantiate(this.BoatConnectionPrefab, this.ConnectionsParent, true);
+        connect.SetEndPoints(this.transform, connectedShip.transform);
+        return connect;
     }
 
 

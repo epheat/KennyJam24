@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectible (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179247608915071002, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: power
+      value: 
+      objectReference: {fileID: 11400000, guid: 11733e36fa8724909884d820c0eb6e4c, type: 2}
     - target: {fileID: 4647490241031409741, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.93
@@ -401,6 +405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8277502143695678096, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6466757fe7a1429086cfadff6d8f4a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1031,6 +1039,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectible (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179247608915071002, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: power
+      value: 
+      objectReference: {fileID: 11400000, guid: c04fa8e58f3b347cfacd70e2e01008b2, type: 2}
     - target: {fileID: 4647490241031409741, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.4
@@ -1071,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8277502143695678096, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be09d0f8fe04a41b68a8b9c006b8c9b2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3305,6 +3321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectible (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179247608915071002, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: power
+      value: 
+      objectReference: {fileID: 11400000, guid: c04fa8e58f3b347cfacd70e2e01008b2, type: 2}
     - target: {fileID: 4647490241031409741, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.8
@@ -3345,6 +3365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8277502143695678096, guid: b28e0468e96dd4f90bc6d10adbfc766d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be09d0f8fe04a41b68a8b9c006b8c9b2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
