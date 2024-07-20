@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: -8639541170897234113}
   - component: {fileID: -871504527288527136}
   - component: {fileID: -3599022856714414075}
-  - component: {fileID: 5142198320522921347}
   - component: {fileID: 8001336374023908373}
   - component: {fileID: -7939732407663209739}
+  - component: {fileID: 205160121077248193}
   m_Layer: 0
-  m_Name: FishingBoatPrefab
+  m_Name: FishingBoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,27 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702f00edf927db04fa431c0afbaf8c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5142198320522921347
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703085498284050488}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 0.58, z: 0}
 --- !u!114 &8001336374023908373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +120,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f34675366908684491b7c706a6c2083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &205160121077248193
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703085498284050488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.54, y: 1.67, z: 2.46}
+  m_Center: {x: 0, y: 0.69, z: 0}
 --- !u!1 &7997292436349085001
 GameObject:
   m_ObjectHideFlags: 0

@@ -960,7 +960,7 @@ MonoBehaviour:
   ballsText: {fileID: 800829624531299337}
   ballRefillSlider: {fileID: 945502215883603782}
   startingBalls: 3
-  ballRefillIntervalSeconds: 5
+  ballRefillIntervalSeconds: 1
 --- !u!1 &6194751549932626160
 GameObject:
   m_ObjectHideFlags: 0

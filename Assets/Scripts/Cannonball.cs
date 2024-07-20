@@ -8,6 +8,8 @@ public class Cannonball : MonoBehaviour
 {
     public Rigidbody Rigidbody;
     [SerializeField] private GameObject Explosion;
+    public GameObject sourceGO;
+    public int damage = 5;
     private Animator ExplosionAnimator;
     private Camera MainCamera;
 
@@ -24,8 +26,9 @@ public class Cannonball : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision) {
-        // TODO: do damage to enemy ships?
-
+        if (collision.gameObject == sourceGO){
+            return;
+        }
         this.ExplosionAnimator.Play("Explosion");
         this.StartCoroutine(this.DestroyAfterDelay(1f));
     }

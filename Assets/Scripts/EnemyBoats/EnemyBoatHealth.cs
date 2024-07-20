@@ -31,8 +31,12 @@ public class EnemyBoatHealth : MonoBehaviour{
     }
 
     private void OnCollisionEnter(Collision other){
-        if (other.transform.GetComponent<Cannonball>()){
-            TakeDamage(5);
+        Cannonball cannonball = other.transform.GetComponent<Cannonball>();
+        if (cannonball != null){
+            if (cannonball.sourceGO != this.gameObject){
+                TakeDamage(cannonball.damage);
+            }
         }
+        
     }
 }

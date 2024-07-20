@@ -19,8 +19,6 @@ public class EnemyBoatCapture : MonoBehaviour{
                 movementController.StartPlayerFollow();
                 
                 ScoreManager.Instance.AddScore(scoreValue);
-                PlayerShipController ship = other.transform.GetComponent<PlayerShipController>();
-                ship.CreateConnection(this.gameObject);
             }
         }
     }

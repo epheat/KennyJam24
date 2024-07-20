@@ -1553,8 +1553,13 @@ MonoBehaviour:
   radius: {x: 30, y: 30}
   spawnRate: 3
   boats:
+  - {fileID: 11400000, guid: 4cc2223bc97a27f428013d3eeab37917, type: 2}
+  - {fileID: 11400000, guid: 981e6a9e3e80ae949900381d57015b4f, type: 2}
+  - {fileID: 11400000, guid: e4aa96e3b37e8e14981beb9776803b87, type: 2}
   - {fileID: 11400000, guid: 49733690328817640ac19e2fc5023244, type: 2}
+  - {fileID: 11400000, guid: 55497e1715ce7c84b83770f9c5aa12db, type: 2}
   - {fileID: 11400000, guid: 6dc098d751493424db454d2bb84dc444, type: 2}
+  - {fileID: 11400000, guid: ef5c5dc29e6413d4aa4cd8aabc19eac7, type: 2}
   spawnedBoats: []
   startingBoats: 15
   maxBoats: 50

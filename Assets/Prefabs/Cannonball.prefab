@@ -4981,6 +4981,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 0}
   Explosion: {fileID: 6567400562367093026}
+  sourceGO: {fileID: 0}
+  damage: 5
 --- !u!114 &5723342619268508020
 MonoBehaviour:
   m_ObjectHideFlags: 0

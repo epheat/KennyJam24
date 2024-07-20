@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bf27aaff0f63449a469ceb1189e5e4, type: 3}
+  m_Name: CargoBoat
+  m_EditorClassIdentifier: 
+  boatName: Cargo Boat
+  health: 150
+  damage: 20
+  speed: 1
+  turnSpeed: 10
+  fireRate: 1
+  range: 1
+  shootSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  prefab: {fileID: 1511515278578458876, guid: 6955f8964ac349b4a92a8421c49fb371, type: 3}
+  spawnWeight: 0
+  scoreValue: 20

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bf27aaff0f63449a469ceb1189e5e4, type: 3}
+  m_Name: SailBoat
+  m_EditorClassIdentifier: 
+  boatName: Sail Boat
+  health: 10
+  damage: 5
+  speed: 3
+  turnSpeed: 30
+  fireRate: 1
+  range: 1
+  shootSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  prefab: {fileID: 4929732703867928872, guid: 6f4b19147611c8b47a28946478d93b0b, type: 3}
+  spawnWeight: 0
+  scoreValue: 7
