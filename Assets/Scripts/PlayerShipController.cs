@@ -17,6 +17,7 @@ public class PlayerShipController : MonoBehaviour {
     [SerializeField] private GameObject CannonPos;
     [SerializeField] private Rigidbody ShipRigidbody;
     [SerializeField] private bool UseAlternateFiringAngle;
+    [SerializeField] private ParticleSystem CollectParticles;
 
     void Start() {
         InputManager.Instance.MouseClickEvent += this.FireToward;
@@ -49,8 +50,9 @@ public class PlayerShipController : MonoBehaviour {
         InputManager.Instance.MouseClickEvent -= this.FireToward;
     }
 
-    public void ApplyPowerup(PowerUpType powerUpType, float amount) {
-        this.PowerUps[powerUpType] = this.PowerUps.GetValueOrDefault(powerUpType, 0) + amount;
+    public void ApplyPowerup(PowerUp powerUp) {
+        this.CollectParticles.Play();
+        this.PowerUps[powerUp.type] = this.PowerUps.GetValueOrDefault(powerUp.type, 0) + powerUp.amount;
     }
 
 

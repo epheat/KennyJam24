@@ -10,7 +10,7 @@ public class Collectible : MonoBehaviour {
     private float time;
     private Vector3 initialPosition;
 
-
+    [SerializeField] PowerUp power;
 
     void Start() {
         this.initialPosition = this.transform.position;
@@ -29,7 +29,8 @@ public class Collectible : MonoBehaviour {
             Debug.Log("Collect!");
 
             PlayerShipController ship = other.GetComponent<PlayerShipController>();
-            // apply powerup
+            ship.ApplyPowerup(this.power);
+            Object.Destroy(this.gameObject);
         }
     }
 }
