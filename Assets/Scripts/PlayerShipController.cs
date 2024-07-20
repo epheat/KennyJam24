@@ -48,12 +48,17 @@ public class PlayerShipController : MonoBehaviour {
 
     void FireToward(Vector3 worldPosition, Vector3 screenPosition) {
         Debug.Log($"Firing cannon!");
+        if (!CannonballManager.Instance.CanUseBall()){
+            return;
+        }
         float screenWidth = Screen.width;
         Transform cannon = screenPosition.x > screenWidth / 2 ? this.CannonPosRight.transform : this.CannonPosLeft.transform;
 
         Cannonball cannonball = Object.Instantiate(this.CannonballPrefab, this.ProjectilesParent.transform, true);
         cannonball.transform.position = cannon.position;
         cannonball.Rigidbody.velocity = cannon.forward * this.GetCannonVelocity();
+
+        CannonballManager.Instance.UseBall();
     }
 
     void OnDestroy() {

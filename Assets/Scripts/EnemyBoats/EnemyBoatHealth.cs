@@ -32,7 +32,7 @@ public class EnemyBoatHealth : MonoBehaviour{
 
     private void OnCollisionEnter(Collision other){
         if (other.transform.GetComponent<Cannonball>()){
-            TakeDamage(1);
+            TakeDamage(5);
         }
     }
 }
