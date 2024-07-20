@@ -28,6 +28,7 @@ public class BoatSpawnManager : MonoBehaviour{
         GameObject boatToSpawn = Instantiate(boatSO.prefab, spawnLocation, TransformUtil.GetLockedYRandomRotation());
         boatToSpawn.GetComponent<EnemyBoatMovementController>().SetMovementSettings(boatSO.speed, boatSO.turnSpeed);
         boatToSpawn.GetComponent<EnemyBoatHealth>().SetHealth(boatSO.health);
+        boatToSpawn.GetComponent<EnemyBoatCapture>().SetScoreValue(boatSO.scoreValue);
     }
     
     public void DestroyAllBoats(){

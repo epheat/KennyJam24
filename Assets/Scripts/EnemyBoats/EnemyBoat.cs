@@ -14,4 +14,5 @@ public class EnemyBoat : ScriptableObject{
     public AudioClip deathSound;
     public GameObject prefab;
     public float spawnWeight;
+    public int scoreValue;
 }
