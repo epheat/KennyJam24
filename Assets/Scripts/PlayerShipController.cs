@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShipController : MonoBehaviour {
@@ -9,6 +10,8 @@ public class PlayerShipController : MonoBehaviour {
     public float BaseCannonReload = 10.0f;
     public float BaseHitPoints = 100.0f;
 
+    private Dictionary<PowerUpType, float> PowerUps = new();
+
     [SerializeField] private Cannonball CannonballPrefab;
     [SerializeField] private GameObject ProjectilesParent;
     [SerializeField] private GameObject CannonPos;
@@ -19,13 +22,17 @@ public class PlayerShipController : MonoBehaviour {
         InputManager.Instance.MouseClickEvent += this.FireToward;
     }
 
+    private float GetMoveSpeed() {
+        return this.BaseMoveSpeed + this.PowerUps.GetValueOrDefault(PowerUpType.BoatSpeed, 0);
+    }
+
     void FixedUpdate() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         this.ShipRigidbody.MoveRotation(Quaternion.Euler(0, horizontalInput * this.BaseRotationSpeed * Time.deltaTime, 0) * this.ShipRigidbody.rotation);
 
-        Vector3 forwardMovement = this.transform.forward * verticalInput * this.BaseMoveSpeed * Time.deltaTime;
+        Vector3 forwardMovement = this.transform.forward * verticalInput * this.GetMoveSpeed() * Time.deltaTime;
         this.ShipRigidbody.MovePosition(this.ShipRigidbody.position + forwardMovement);
     }
 
@@ -40,6 +47,10 @@ public class PlayerShipController : MonoBehaviour {
 
     void OnDestroy() {
         InputManager.Instance.MouseClickEvent -= this.FireToward;
+    }
+
+    public void ApplyPowerup(PowerUpType powerUpType, float amount) {
+        this.PowerUps[powerUpType] = this.PowerUps.GetValueOrDefault(powerUpType, 0) + amount;
     }
 
 
