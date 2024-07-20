@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Util;
 using Random = UnityEngine.Random;
 
 public class BoatSpawnManager : MonoBehaviour{
@@ -15,7 +16,9 @@ public class BoatSpawnManager : MonoBehaviour{
 
     private void SpawnBoat(){
         Vector3 spawnLocation = new Vector3(Random.Range(centerPoint.x - radius.x, centerPoint.x + radius.x), 0, Random.Range(centerPoint.y - radius.y, centerPoint.y + radius.y));
-        GameObject boatToSpawn = Instantiate(GetRandomBoat().prefab, spawnLocation, quaternion.identity);
+        EnemyBoat boatSO = GetRandomBoat();
+        GameObject boatToSpawn = Instantiate(boatSO.prefab, spawnLocation, TransformUtil.GetLockedYRandomRotation());
+        boatToSpawn.GetComponent<EnemyBoatMovementController>().SetMovementSettings(boatSO.speed, boatSO.turnSpeed);
     }
     
     public void DestroyAllBoats(){

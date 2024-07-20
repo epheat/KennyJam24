@@ -15,7 +15,8 @@ MonoBehaviour:
   boatName: RowBoat
   health: 5
   damage: 0
-  speed: 2
+  speed: 1
+  turnSpeed: 50
   fireRate: 0
   range: 0
   shootSound: {fileID: 0}

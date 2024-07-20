@@ -15,7 +15,8 @@ MonoBehaviour:
   boatName: Small Fishing Boat
   health: 10
   damage: 10
-  speed: 5
+  speed: 2
+  turnSpeed: 25
   fireRate: 1
   range: 1
   shootSound: {fileID: 0}

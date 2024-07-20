@@ -6,6 +6,7 @@ public class EnemyBoat : ScriptableObject{
     public int health;
     public int damage;
     public float speed;
+    public float turnSpeed;
     public float fireRate;
     public float range;
     public AudioClip shootSound;
