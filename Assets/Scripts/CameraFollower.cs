@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
 
-    private Camera camera;
+    private Camera cam;
     [SerializeField] GameObject objectToFollow;
     [SerializeField] private float positionSmoothTime = 0.3f;
     [SerializeField] private float rotationSmoothTime = 0.3f;
@@ -15,7 +15,7 @@ public class CameraFollower : MonoBehaviour
 
     void Start()
     {
-        this.camera = this.GetComponent<Camera>();
+        this.cam = this.GetComponent<Camera>();
     }
 
     // Update is called once per frame

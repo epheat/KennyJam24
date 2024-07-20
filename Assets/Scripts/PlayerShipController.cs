@@ -71,6 +71,9 @@ public class PlayerShipController : MonoBehaviour {
     public void ApplyPowerup(PowerUp powerUp) {
         this.CollectParticles.Play();
         this.PowerUps[powerUp.type] = this.PowerUps.GetValueOrDefault(powerUp.type, 0) + powerUp.amount;
+        if (powerUp.type == PowerUpType.CannonCapacity) {
+            CannonballManager.Instance.IncreaseMaxBalls();
+        }
     }
 
     public BoatConnection CreateConnection(GameObject connectedShip) {

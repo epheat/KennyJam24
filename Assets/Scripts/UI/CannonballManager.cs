@@ -74,4 +74,10 @@ public class CannonballManager : MonoBehaviour{
         }
         AssignBalls();
     }
+
+    public void IncreaseMaxBalls() {
+        if (this.maxBalls < this.hardCapMaxBalls) {
+            this.maxBalls++;
+        }
+    }
 }
