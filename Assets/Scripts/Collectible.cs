@@ -30,6 +30,7 @@ public class Collectible : MonoBehaviour {
 
             PlayerShipController ship = other.GetComponent<PlayerShipController>();
             ship.ApplyPowerup(this.power);
+            MusicManager.Instance.PlayPowerUpSound();
             Object.Destroy(this.gameObject);
         }
     }

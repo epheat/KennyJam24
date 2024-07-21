@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 
         if (this.TimeRemaining <= 0) {
             Debug.Log("Time's up!");
+            // TODO: display score, maybe save high score, and restart.
         }
     }
 }
