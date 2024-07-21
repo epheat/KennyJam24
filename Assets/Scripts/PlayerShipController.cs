@@ -8,7 +8,8 @@ public class PlayerShipController : MonoBehaviour {
     public float BaseMoveSpeed = 2.0f;
     public float BaseRotationSpeed = 60.0f;
 
-    public float BaseCannonVelocity = 10.0f;
+    public float BaseCannonVelocity = 8.0f;
+    public float BaseCannonDamage = 5.0f;
     public float BaseCannonReload = 10.0f;
     public float BaseHitPoints = 100.0f;
 
@@ -41,8 +42,8 @@ public class PlayerShipController : MonoBehaviour {
         return this.BaseMoveSpeed + this.PowerUps.GetValueOrDefault(PowerUpType.BoatSpeed, 0);
     }
 
-    private float GetCannonVelocity() {
-        return this.BaseCannonVelocity;
+    private float GetCannonDamage() {
+        return this.BaseCannonDamage + this.PowerUps.GetValueOrDefault(PowerUpType.CannonRange, 0);
     }
 
     void FixedUpdate() {
@@ -66,8 +67,9 @@ public class PlayerShipController : MonoBehaviour {
         Transform cannon = screenPosition.x > screenWidth / 2 ? this.CannonPosRight.transform : this.CannonPosLeft.transform;
 
         Cannonball cannonball = Object.Instantiate(this.CannonballPrefab, this.ProjectilesParent.transform, true);
+        cannonball.damage = (int) this.GetCannonDamage();
         cannonball.transform.position = cannon.position;
-        cannonball.Rigidbody.velocity = cannon.forward * this.GetCannonVelocity();
+        cannonball.Rigidbody.velocity = cannon.forward * this.BaseCannonVelocity;
 
         CannonballManager.Instance.UseBall();
     }
@@ -81,6 +83,9 @@ public class PlayerShipController : MonoBehaviour {
         this.PowerUps[powerUp.type] = this.PowerUps.GetValueOrDefault(powerUp.type, 0) + powerUp.amount;
         if (powerUp.type == PowerUpType.CannonCapacity) {
             CannonballManager.Instance.IncreaseMaxBalls();
+        }
+        if (powerUp.type == PowerUpType.CannonRange) {
+
         }
     }
 
