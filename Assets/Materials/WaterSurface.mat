@@ -79,8 +79,8 @@ Material:
     - _TileX: 1
     - _TileY: 1
     - _UVSec: 0
-    - _WaveHeight: 0.1
-    - _WaveSpeed: 1
+    - _WaveHeight: 0.168
+    - _WaveSpeed: 1.23
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
