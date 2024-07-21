@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
         this.TimeRemaining -= Time.deltaTime;
         this.TimeRemainingText.text = this.TimeRemaining.ToString("N0");
 
-        if (this.TimeRemaining <= 0) {
+        if (this.TimeRemaining <= 0 && !endScreen.activeInHierarchy) {
             Debug.Log("Time's up!");
             // TODO: display score, maybe save high score, and restart.
             endScreen.SetActive(true);
