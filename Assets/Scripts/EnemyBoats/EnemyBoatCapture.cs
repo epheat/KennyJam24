@@ -21,6 +21,7 @@ public class EnemyBoatCapture : MonoBehaviour{
                 ScoreManager.Instance.AddScore(scoreValue);
                 
                 PlayerShipController ship = other.transform.GetComponent<PlayerShipController>();
+                MusicManager.Instance.PlayCaptureSound();
                 ship.CreateConnection(this.gameObject);
                 
                 Destroy(this);

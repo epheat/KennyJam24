@@ -18,11 +18,15 @@ public class EnemyBoatHealth : MonoBehaviour{
     }
     
     private void TakeDamage(int damage){
+
         healthSlider.value -= damage;
         currentHeath -= damage;
 
         if (currentHeath <= 0){
+            MusicManager.Instance.PlayDeathSound();
             Die();
+        } else {
+            MusicManager.Instance.PlayImpactSound();
         }
     }
 
