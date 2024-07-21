@@ -28,7 +28,11 @@ public class EnemyBoatHealth : MonoBehaviour{
 
     private void Die(){
         GetComponent<EnemyBoatMovementController>().enabled = false;
-        GetComponent<EnemyAttackLogic>().enabled = false;
+
+        EnemyAttackLogic attackLogic = GetComponent<EnemyAttackLogic>();
+        if (attackLogic != null){
+            attackLogic.enabled = false;
+        }
     }
 
     private void OnCollisionEnter(Collision other){
