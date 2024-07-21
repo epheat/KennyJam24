@@ -2542,9 +2542,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Try to get the highest score possible!
 
-    30 - Gold Medal
+    50 - Gold Medal
 
-    20 -
+    25 -
     Silver Medal
 
     10- Bronze Medal'
