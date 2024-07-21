@@ -32,14 +32,21 @@ public class EnemyBoatHealth : MonoBehaviour{
 
     private void Die(){
         GetComponent<EnemyBoatMovementController>().enabled = false;
+        GetComponent<Collider>().isTrigger = true;
+        healthSlider.gameObject.SetActive(false);
 
         EnemyAttackLogic attackLogic = GetComponent<EnemyAttackLogic>();
         if (attackLogic != null){
             attackLogic.enabled = false;
         }
+        
+        GetComponent<EnemyBoatCapture>().StartFollow();
     }
 
     private void OnCollisionEnter(Collision other){
+        if (currentHeath <= 0){
+            return;
+        }
         Cannonball cannonball = other.transform.GetComponent<Cannonball>();
         if (cannonball != null){
             if (cannonball.sourceGO != this.gameObject){

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class PlayerShipController : MonoBehaviour {
 
@@ -24,6 +26,12 @@ public class PlayerShipController : MonoBehaviour {
     [SerializeField] private Transform ConnectionsParent;
 
     public bool IsStopped;
+
+    public static PlayerShipController Instance;
+
+    private void Awake(){
+        Instance = this;
+    }
 
     void Start() {
         InputManager.Instance.MouseClickEvent += this.FireToward;

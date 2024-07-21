@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
     public float TimeRemaining = 50;
     [SerializeField] private TextMeshProUGUI TimeRemainingText;
 
+    [SerializeField] private GameObject endScreen;
+
     private void Start() {
 
     }
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour {
         if (this.TimeRemaining <= 0) {
             Debug.Log("Time's up!");
             // TODO: display score, maybe save high score, and restart.
+            endScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
