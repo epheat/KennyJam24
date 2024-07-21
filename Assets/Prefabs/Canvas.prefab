@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 3132364291601908158}
+  endGameText: {fileID: 1472399783234347263}
 --- !u!114 &4668897657283242986
 MonoBehaviour:
   m_ObjectHideFlags: 0

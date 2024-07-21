@@ -2542,12 +2542,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Try to get the highest score possible!
 
-    XXX - Gold Medal
+    30 - Gold Medal
 
-    YYY
-    - Silver Medal
+    20 -
+    Silver Medal
 
-    ZZZ- Bronze Medal'
+    10- Bronze Medal'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8109964abe7284499679282cfbc29ff, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
