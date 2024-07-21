@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d568e2d74165041eb9d353df4b57c923, type: 3}
   m_Name: ReloadSpeed
   m_EditorClassIdentifier: 
-  type: 3
-  amount: 1
+  type: 1
+  amount: 4
